@@ -15,7 +15,6 @@
     $validator->field('message')->maxLength(6000);
 
     $_mailto = $_GET['email'];
-    echo $_mailto;
     $_shuttle = $_GET['shuttle'];
     if($_shuttle == "Shuttle-Yes" ){
         $_shuttle = "Yes";
@@ -24,9 +23,7 @@
         $_shuttle = "No";
     }
 
-    echo $_mailto;
-
-    $pp->sendEmailTo($_mailto); // ← Your email here
+    // $pp->sendEmailTo($_mailto); // ← Your email here
 
     $mailer = $pp->getMailer();
 
