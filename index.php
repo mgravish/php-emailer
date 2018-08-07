@@ -29,6 +29,19 @@
     $pp->sendEmailTo($_mailto); // ← Your email here
 
     $mailer = $pp->getMailer();
+
+
+    $mailer->IsSMTP();
+    $mailer->CharSet = 'UTF-8';
+
+    $mailer->Host       = "mail.amyplusmatt.com"; // SMTP server example
+    $mailer->SMTPDebug  = 0;                     // enables SMTP debug information (for testing)
+    $mailer->SMTPAuth   = true;                  // enable SMTP authentication
+    $mailer->Port       = 465;                    // set the SMTP port for the GMAIL server
+    $mailer->Username   = "matt@amyplusmatt.com"; // SMTP account username example
+    $mailer->Password   = "zsFS5yB:CA"; 
+
+
     $mailer->addAddress($_mailto);
     $mailer->addBCC('matt@amyplusmatt.com');
     $mailer->setFrom('matt@amyplusmatt.com','Amy and Matt',false);
